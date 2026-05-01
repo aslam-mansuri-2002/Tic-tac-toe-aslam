@@ -4,41 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe</title>
+    <title>SK UNIQUE - Premium Tic-Tac-Toe</title>
     <link rel="stylesheet" href="Tic_Tac_Toe.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 
 <body>
-    <!-- heading -->
-    <h1 class="heading">Tic tac toe</h1>
-    <p class="rules" style="text-align: center; margin-bottom: 20px; padding: 0 10px;">Pehle 3 symbols ('X' ya 'O') ko
-        ek line mein (seedha, khada, ya diagonal)<br> laane wala player jeet jayega!</p>
-    <!-- main div -->
-    <div id="main-div">
-        <!-- box jime X and O hoge -->
-        <div id="big-box">
-            <div class="small-box" data-index="0"></div>
-            <div class="small-box" data-index="1"></div>
-            <div class="small-box" data-index="2"></div>
-            <div class="small-box" data-index="3"></div>
-            <div class="small-box" data-index="4"></div>
-            <div class="small-box" data-index="5"></div>
-            <div class="small-box" data-index="6"></div>
-            <div class="small-box" data-index="7"></div>
-            <div class="small-box" data-index="8"></div>
-        </div>
-        <!-- game ke other thinks -->
-        <div id="game-controler">
-            <div class="control-row">
-                <button class="start-btn">Start</button>
-                <h2 class="status">Player X's Turn</h2>
-                <button class="all-clear-btn">All Clear</button>
+    <div class="container">
+        <h1 class="heading">SK UNIQUE</h1>
+        
+        <div class="stats-container">
+            <div class="stat-box player-x">
+                <span class="label">PLAYER X</span>
+                <span id="score-x" class="value">0</span>
             </div>
-            <!-- winner ya draw dikhane ke liye -->
-            <h1 class="result">...</h1>
+            <div class="stat-box draw">
+                <span class="label">DRAWS</span>
+                <span id="score-draw" class="value">0</span>
+            </div>
+            <div class="stat-box player-o">
+                <span class="label">PLAYER O</span>
+                <span id="score-o" class="value">0</span>
+            </div>
         </div>
 
+        <div class="mode-selector">
+            <button id="pvp-mode" class="mode-btn active">PvP</button>
+            <button id="pvai-mode" class="mode-btn">vs AI</button>
+        </div>
 
+        <div id="main-div">
+            <div id="big-box">
+                <div class="small-box" data-index="0"></div>
+                <div class="small-box" data-index="1"></div>
+                <div class="small-box" data-index="2"></div>
+                <div class="small-box" data-index="3"></div>
+                <div class="small-box" data-index="4"></div>
+                <div class="small-box" data-index="5"></div>
+                <div class="small-box" data-index="6"></div>
+                <div class="small-box" data-index="7"></div>
+                <div class="small-box" data-index="8"></div>
+            </div>
+
+            <div id="game-controler">
+                <h2 class="status">Player X's Turn</h2>
+                <div class="control-row">
+                    <button class="start-btn">Start</button>
+                    <button class="all-clear-btn">Clear All</button>
+                </div>
+                <h1 class="result">...</h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="winner-modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-winner-text">Winner!</h2>
+            <button id="play-again-btn">Play Again</button>
+        </div>
     </div>
 
 
